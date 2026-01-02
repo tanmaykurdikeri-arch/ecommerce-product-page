@@ -10,7 +10,7 @@
   <link rel="shortcut icon" href="./assets/images/logo/favicon.ico" type="image/x-icon">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./assets/css/style-prefix.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
         <ion-icon name="close-outline"></ion-icon>
       </button>
       <div class="newsletter-img">
-        <img src="./assets/images/earbuds.jpg" alt="subscribe newsletter" width="400" height="400">
+        <img src="./assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
       </div>
       <div class="newsletter">
         <form action="#">
@@ -50,9 +50,264 @@
       <ion-icon name="close-outline"></ion-icon>
     </button>
     <div class="toast-banner">
-      <img src="./assets/images/earbuds.jpg" alt="Wireless Headphones" width="80" height="70">
+      <img src="./assets/images/products/headphone-1.jpg" alt="Wireless Headphones" width="80" height="70">
     </div>
     <div class="toast-detail">
       <p class="toast-message">Someone just bought</p>
       <p class="toast-title">Wireless Headphones</p>
-      <p class
+      <p class="toast-meta"><time datetime="PT2M">2 Minutes</time> ago</p>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="container">
+        <ul class="header-social-container">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+        </ul>
+        <div class="header-alert-news">
+          <p><b>Free Shipping</b> This Week Order Over - $55</p>
+        </div>
+        <div class="header-top-actions">
+          <select name="currency"><option value="usd">USD &dollar;</option><option value="eur">EUR &euro;</option></select>
+          <select name="language"><option value="en-US">English</option><option value="es-ES">Espa&ntilde;ol</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-main">
+      <div class="container">
+        <a href="#" class="header-logo">
+          <img src="./assets/images/logo/logo.svg" alt="Headphone Store logo" width="120" height="36">
+        </a>
+        <div class="header-search-container">
+          <input type="search" name="search" class="search-field" placeholder="Search headphones...">
+          <button class="search-btn"><ion-icon name="search-outline"></ion-icon></button>
+        </div>
+        <div class="header-user-actions">
+          <button class="action-btn"><ion-icon name="person-outline"></ion-icon></button>
+          <button class="action-btn"><ion-icon name="heart-outline"></ion-icon><span class="count">0</span></button>
+          <button class="action-btn"><ion-icon name="bag-handle-outline"></ion-icon><span class="count">0</span></button>
+        </div>
+      </div>
+    </div>
+
+    <nav class="desktop-navigation-menu">
+      <div class="container">
+        <ul class="desktop-menu-category-list">
+          <li class="menu-category"><a href="#" class="menu-title">Home</a></li>
+          <li class="menu-category">
+            <a href="#" class="menu-title">Headphones</a>
+            <div class="dropdown-panel">
+              <ul class="dropdown-panel-list">
+                <li class="menu-title"><a href="#">Wireless</a></li>
+                <li class="panel-list-item"><a href="#">Over-Ear</a></li>
+                <li class="panel-list-item"><a href="#">In-Ear</a></li>
+                <li class="panel-list-item"><a href="#">Noise-Canceling</a></li>
+                <li class="panel-list-item"><a href="#">Gaming</a></li>
+                <li class="panel-list-item"><a href="#"><img src="./assets/images/headphone-banner.jpg" alt="headphone collection" width="250" height="119"></a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="menu-category"><a href="#" class="menu-title">Accessories</a></li>
+          <li class="menu-category"><a href="#" class="menu-title">Support</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="mobile-bottom-navigation">
+      <button class="action-btn" data-mobile-menu-open-btn><ion-icon name="menu-outline"></ion-icon></button>
+      <button class="action-btn"><ion-icon name="bag-handle-outline"></ion-icon><span class="count">0</span></button>
+      <button class="action-btn"><ion-icon name="home-outline"></ion-icon></button>
+      <button class="action-btn"><ion-icon name="heart-outline"></ion-icon><span class="count">0</span></button>
+      <button class="action-btn" data-mobile-menu-open-btn><ion-icon name="grid-outline"></ion-icon></button>
+    </div>
+
+    <nav class="mobile-navigation-menu has-scrollbar" data-mobile-menu>
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+        <button class="menu-close-btn" data-mobile-menu-close-btn><ion-icon name="close-outline"></ion-icon></button>
+      </div>
+      <ul class="mobile-menu-category-list">
+        <li class="menu-category"><a href="#" class="menu-title">Home</a></li>
+        <li class="menu-category"><a href="#" class="menu-title">Headphones</a></li>
+        <li class="menu-category"><a href="#" class="menu-title">Accessories</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Banner -->
+    <div class="banner">
+      <div class="container">
+        <div class="slider-container has-scrollbar">
+          <div class="slider-item">
+            <img src="./assets/images/banner-headphone-1.jpg" alt="wireless headphones sale" class="banner-img">
+            <div class="banner-content">
+              <p class="banner-subtitle">Trending Audio</p>
+              <h2 class="banner-title">Wireless Headphones Sale</h2>
+              <p class="banner-text">Starting at &dollar; <b>50</b>.00</p>
+              <a href="#" class="banner-btn">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product Showcase -->
+    <div class="product-container">
+      <div class="container">
+        <div class="product-box">
+          <div class="product-main">
+            <h2 class="title">Featured Headphones</h2>
+            <div class="product-grid">
+              <div class="showcase">
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/headphone-1.jpg" alt="Wireless Over-Ear Headphones" width="300" class="product-img default">
+                  <img src="./assets/images/products/headphone-1-hover.jpg" alt="Wireless Over-Ear Headphones" width="300" class="product-img hover">
+                  <p class="showcase-badge">20%</p>
+                  <div class="showcase-actions">
+                    <button class="btn-action"><ion-icon name="heart-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="eye-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="bag-add-outline"></ion-icon></button>
+                  </div>
+                </div>
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Wireless</a>
+                  <a href="#"><h3 class="showcase-title">Wireless Over-Ear Headphones</h3></a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon>
+                  </div>
+                  <div class="price-box"><p class="price">$80.00</p><del>$100.00</del></div>
+                </div>
+              </div>
+
+              <div class="showcase">
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/headphone-2.jpg" alt="Noise-Canceling In-Ear" width="300" class="product-img default">
+                  <img src="./assets/images/products/headphone-2-hover.jpg" alt="Noise-Canceling In-Ear" width="300" class="product-img hover">
+                  <div class="showcase-actions">
+                    <button class="btn-action"><ion-icon name="heart-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="eye-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="bag-add-outline"></ion-icon></button>
+                  </div>
+                </div>
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">In-Ear</a>
+                  <a href="#"><h3 class="showcase-title">Noise-Canceling In-Ear</h3></a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                  </div>
+                  <div class="price-box"><p class="price">$60.00</p><del>$75.00</del></div>
+                </div>
+              </div>
+
+              <div class="showcase">
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/headphone-3.jpg" alt="Gaming Headset" width="300" class="product-img default">
+                  <img src="./assets/images/products/headphone-3-hover.jpg" alt="Gaming Headset" width="300" class="product-img hover">
+                  <p class="showcase-badge">New</p>
+                  <div class="showcase-actions">
+                    <button class="btn-action"><ion-icon name="heart-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="eye-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="bag-add-outline"></ion-icon></button>
+                  </div>
+                </div>
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Gaming</a>
+                  <a href="#"><h3 class="showcase-title">Gaming Headset with Mic</h3></a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-outline"></ion-icon><ion-icon name="star-outline"></ion-icon>
+                  </div>
+                  <div class="price-box"><p class="price">$90.00</p><del>$110.00</del></div>
+                </div>
+              </div>
+
+              <div class="showcase">
+                <div class="showcase-banner">
+                  <img src="./assets/images/products/headphone-4.jpg" alt="Bluetooth Earbuds" width="300" class="product-img default">
+                  <img src="./assets/images/products/headphone-4-hover.jpg" alt="Bluetooth Earbuds" width="300" class="product-img hover">
+                  <div class="showcase-actions">
+                    <button class="btn-action"><ion-icon name="heart-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="eye-outline"></ion-icon></button>
+                    <button class="btn-action"><ion-icon name="bag-add-outline"></ion-icon></button>
+                  </div>
+                </div>
+                <div class="showcase-content">
+                  <a href="#" class="showcase-category">Earbuds</a>
+                  <a href="#"><h3 class="showcase-title">Bluetooth Earbuds</h3></a>
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+                  <div class="price-box"><p class="price">$40.00</p><del>$50.00</del></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-nav">
+      <div class="container">
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><h2 class="nav-title">Headphones</h2></li>
+          <li class="footer-nav-item"><a href="#" class="footer-nav-link">Wireless</a></li>
+          <li class="footer-nav-item"><a href="#" class="footer-nav-link">Over-Ear</a></li>
+          <li class="footer-nav-item"><a href="#" class="footer-nav-link">In-Ear</a></li>
+        </ul>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><h2 class="nav-title">Support</h2></li>
+          <li class="footer-nav-item"><a href="#" class="footer-nav-link">Contact</a></li>
+          <li class="footer-nav-item"><a href="#" class="footer-nav-link">Warranty</a></li>
+        </ul>
+        <ul class="footer-nav-list">
+          <li class="footer-nav-item"><h2 class="nav-title">Follow Us</h2></li>
+          <li><ul class="social-link">
+            <li class="footer-nav-item"><a href="#" class="footer-nav-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li class="footer-nav-item"><a href="#" class="footer-nav-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            <li class="footer-nav-item"><a href="#" class="footer-nav-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          </ul></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">Copyright &copy; <a href="#">Headphone Store</a> all rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- IonIcons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <!-- Your JS -->
+  <script>
+    'use strict';
+
+    // modal variables
+    const modal = document.querySelector('[data-modal]');
+    const modalCloseBtn = document.querySelector('[data-modal-close]');
+    const modalCloseOverlay = document.querySelector('[data-modal-overlay]');
+
+    // modal function
+    const modalCloseFunc = function () { modal.classList.add('closed') }
+
+    // modal eventListener
+    modalCloseOverlay.addEventListener('click', modalCloseFunc);
+    modalCloseBtn.addEventListener('click', modalCloseFunc);
+
+    // notification toast variables
+    const notificationToast = document.querySelector('[data-toast]');
+    const toastCloseBtn = document.querySelector('[data-toast-close]');
+
+    // notification toast eventListener
