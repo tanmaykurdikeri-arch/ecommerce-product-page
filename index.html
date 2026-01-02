@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SonicWave Pro | Wireless Earbuds</title>
+  <title>SonicWave Pro | Premium Wireless Earbuds</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -13,25 +12,32 @@
 <header class="navbar">
   <h1>SonicWave</h1>
   <nav>
-    <a href="#">Features</a>
-    <a href="#">Specs</a>
-    <a href="#">Reviews</a>
+    <a href="#features">Features</a>
+    <a href="#specs">Specs</a>
+    <a href="#reviews">Reviews</a>
   </nav>
 </header>
 
 <main class="container">
 
   <section class="product">
-    <img src="assets/earbuds.jpg" alt="SonicWave Pro Earbuds">
+    <div class="product-image-container">
+      <span class="badge">20% OFF</span>
+      <div class="product-image-placeholder">🎧</div>
+    </div>
 
     <div class="product-info">
       <h2>SonicWave Pro Wireless Earbuds</h2>
 
       <div class="rating">
-        ⭐⭐⭐⭐⭐ <span>(4.9 / 5)</span>
+        ⭐⭐⭐⭐⭐ <span>(4.9 / 5 - 2,847 reviews)</span>
       </div>
 
-      <p class="price">₹15,999 <span>20% OFF</span></p>
+      <p class="price">
+        ₹15,999 
+        <span class="original">₹19,999</span>
+        <span class="discount">20% OFF</span>
+      </p>
 
       <p class="desc">
         Premium wireless earbuds with active noise cancellation, immersive sound,
@@ -39,49 +45,87 @@
       </p>
 
       <div class="options">
-        <label>Color:</label>
-        <button onclick="selectColor(this)">Black</button>
-        <button onclick="selectColor(this)">Blue</button>
-        <button onclick="selectColor(this)">White</button>
+        <label>Color</label>
+        <div class="color-buttons">
+          <button class="color-btn black selected" onclick="selectColor(this)" aria-label="Black"></button>
+          <button class="color-btn gray" onclick="selectColor(this)" aria-label="Gray"></button>
+          <button class="color-btn white" onclick="selectColor(this)" aria-label="White"></button>
+        </div>
       </div>
 
       <div class="quantity">
-        <label>Quantity:</label>
-        <input type="number" min="1" value="1" id="qty">
+        <label>Quantity</label>
+        <div class="qty-control">
+          <button class="qty-btn" onclick="decreaseQty()">−</button>
+          <input type="number" min="1" value="1" id="qty" readonly>
+          <button class="qty-btn" onclick="increaseQty()">+</button>
+        </div>
       </div>
 
       <button class="add-btn" onclick="addToCart()">Add to Cart</button>
     </div>
   </section>
 
-  <section class="box">
-    <h3>Key Features</h3>
-    <ul>
-      <li>Active Noise Cancellation (ANC)</li>
-      <li>30 Hours Battery Life</li>
-      <li>Bluetooth 5.3</li>
-      <li>IPX7 Water Resistance</li>
-      <li>Touch & Voice Controls</li>
-    </ul>
-  </section>
+  <div class="feature-grid">
+    <section class="box" id="features">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Active Noise Cancellation (ANC)</li>
+        <li>30 Hours Battery Life</li>
+        <li>Bluetooth 5.3 Connectivity</li>
+        <li>IPX7 Water Resistance</li>
+        <li>Touch & Voice Controls</li>
+      </ul>
+    </section>
 
-  <section class="box">
-    <h3>Technical Specifications</h3>
-    <table>
-      <tr><th>Driver</th><td>12mm Dynamic</td></tr>
-      <tr><th>Battery</th><td>8 hrs + 22 hrs case</td></tr>
-      <tr><th>Charging</th><td>USB-C & Wireless</td></tr>
-      <tr><th>Warranty</th><td>2 Years</td></tr>
-    </table>
-  </section>
+    <section class="box" id="specs">
+      <h3>Technical Specs</h3>
+      <table>
+        <tr><th>Driver</th><td>12mm Dynamic</td></tr>
+        <tr><th>Battery</th><td>8 hrs + 22 hrs case</td></tr>
+        <tr><th>Charging</th><td>USB-C & Wireless</td></tr>
+        <tr><th>Warranty</th><td>2 Years</td></tr>
+      </table>
+    </section>
 
-  <section class="box">
-    <h3>Customer Reviews</h3>
-    <p>⭐⭐⭐⭐⭐ “Sound quality is insane. Totally worth it.”</p>
-    <p>⭐⭐⭐⭐⭐ “Battery and comfort are top-notch.”</p>
-  </section>
+    <section class="box" id="reviews">
+      <h3>Customer Reviews</h3>
+      <div class="review">
+        <p>⭐⭐⭐⭐⭐ "Sound quality is insane. Totally worth it."</p>
+      </div>
+      <div class="review">
+        <p>⭐⭐⭐⭐⭐ "Battery and comfort are top-notch."</p>
+      </div>
+    </section>
+  </div>
 
 </main>
+
+<!-- Cart Modal -->
+<div class="cart-modal" id="cartModal">
+  <div class="cart-content">
+    <button class="cart-close" onclick="closeCart()">×</button>
+    <div class="cart-header">
+      <h3>Added to Cart</h3>
+      <p style="color: var(--light-gray);">Item successfully added</p>
+    </div>
+    
+    <div class="cart-item">
+      <div class="cart-item-image">🎧</div>
+      <div class="cart-item-details">
+        <h4>SonicWave Pro Wireless Earbuds</h4>
+        <p>Color: <span id="cartColor">Black</span></p>
+        <p>Quantity: <span id="cartQty">1</span></p>
+        <p style="font-weight: 600; color: var(--primary-black); font-size: 1.1rem; margin-top: 0.5rem;">₹<span id="cartPrice">15,999</span></p>
+      </div>
+    </div>
+
+    <div class="cart-buttons">
+      <button class="cart-btn" onclick="closeCart()">Continue Shopping</button>
+      <button class="cart-btn primary" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+</div>
 
 <footer>
   © 2026 SonicWave | Internship Assessment Project
@@ -90,7 +134,5 @@
 <div id="toast">Added to cart ✅</div>
 
 <script src="script.js"></script>
-</body>
-</html> src="script.js"></script>
 </body>
 </html>
