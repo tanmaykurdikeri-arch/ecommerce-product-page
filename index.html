@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SonicWave Pro | Wireless Earbuds</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <h1>SonicWave</h1>
+  <nav>
+    <a href="#">Features</a>
+    <a href="#">Specs</a>
+    <a href="#">Reviews</a>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="product">
+    <img src="assets/earbuds.jpg" alt="SonicWave Pro Earbuds">
+
+    <div class="product-info">
+      <h2>SonicWave Pro Wireless Earbuds</h2>
+
+      <div class="rating">
+        ⭐⭐⭐⭐⭐ <span>(4.9 / 5)</span>
+      </div>
+
+      <p class="price">₹15,999 <span>20% OFF</span></p>
+
+      <p class="desc">
+        Premium wireless earbuds with active noise cancellation, immersive sound,
+        and all-day comfort. Designed for professionals, athletes, and music lovers.
+      </p>
+
+      <div class="options">
+        <label>Color:</label>
+        <button onclick="selectColor(this)">Black</button>
+        <button onclick="selectColor(this)">Blue</button>
+        <button onclick="selectColor(this)">White</button>
+      </div>
+
+      <div class="quantity">
+        <label>Quantity:</label>
+        <input type="number" min="1" value="1" id="qty">
+      </div>
+
+      <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+  </section>
+
+  <section class="box">
+    <h3>Key Features</h3>
+    <ul>
+      <li>Active Noise Cancellation (ANC)</li>
+      <li>30 Hours Battery Life</li>
+      <li>Bluetooth 5.3</li>
+      <li>IPX7 Water Resistance</li>
+      <li>Touch & Voice Controls</li>
+    </ul>
+  </section>
+
+  <section class="box">
+    <h3>Technical Specifications</h3>
+    <table>
+      <tr><th>Driver</th><td>12mm Dynamic</td></tr>
+      <tr><th>Battery</th><td>8 hrs + 22 hrs case</td></tr>
+      <tr><th>Charging</th><td>USB-C & Wireless</td></tr>
+      <tr><th>Warranty</th><td>2 Years</td></tr>
+    </table>
+  </section>
+
+  <section class="box">
+    <h3>Customer Reviews</h3>
+    <p>⭐⭐⭐⭐⭐ “Sound quality is insane. Totally worth it.”</p>
+    <p>⭐⭐⭐⭐⭐ “Battery and comfort are top-notch.”</p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 SonicWave | Internship Assessment Project
+</footer>
+
+<div id="toast">Added to cart ✅</div>
+
+<script src="script.js"></script>
+</body>
+</html> src="script.js"></script>
+</body>
+</html>
