@@ -1,68 +1,64 @@
-function selectColor(btn) {
-  document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
-  btn.classList.add('selected');
+// Cart functionality
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+updateCartDisplay();
+
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+        const id = button.dataset.id;
+        const name = button.dataset.name;
+        const price = parseFloat(button.dataset.price);
+        
+        const existingItem = cart.find(item => item.id === id);
+        if (existingItem) {
+            existingItem.quantity++;
+        } else {
+            cart.push({ id, name, price, quantity: 1 });
+        }
+        
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartDisplay();
+        alert(`${name} added to cart!`);
+    });
+});
+
+function updateCartDisplay() {
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    
+    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        cartItems.innerHTML += `
+            <div class="cart-item">
+                <span>${item.name} (x${item.quantity})</span>
+                <span>$${(item.price * item.quantity).toFixed(2)}</span>
+                <button onclick="removeItem('${item.id}')">Remove</button>
+            </div>
+        `;
+    });
+    cartTotal.textContent = `Total: $${total.toFixed(2)}`;
 }
 
-function increaseQty() {
-  const input = document.getElementById('qty');
-  input.value = parseInt(input.value) + 1;
+function removeItem(id) {
+    cart = cart.filter(item => item.id !== id);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartDisplay();
 }
 
-function decreaseQty() {
-  const input = document.getElementById('qty');
-  if (parseInt(input.value) > 1) {
-    input.value = parseInt(input.value) - 1;
-  }
-}
-
-function addToCart() {
-  const qty = document.getElementById('qty').value;
-  const color = document.querySelector('.color-btn.selected').getAttribute('aria-label');
-  const pricePerUnit = 15999;
-  const totalPrice = pricePerUnit * parseInt(qty);
-  
-  // Update cart modal
-  document.getElementById('cartColor').textContent = color;
-  document.getElementById('cartQty').textContent = qty;
-  document.getElementById('cartPrice').textContent = totalPrice.toLocaleString('en-IN');
-  
-  // Show modal
-  document.getElementById('cartModal').classList.add('show');
-  
-  // Also show toast
-  const toast = document.getElementById('toast');
-  toast.textContent = `Added ${qty} ${color} earbuds to cart ✅`;
-  toast.classList.add('show');
-  
-  setTimeout(() => {
-    toast.classList.remove('show');
-  }, 2000);
-}
-
-function closeCart() {
-  document.getElementById('cartModal').classList.remove('show');
+function toggleCart() {
+    document.getElementById('cart-sidebar').classList.toggle('open');
 }
 
 function checkout() {
-  alert('Proceeding to checkout...');
-  closeCart();
+    alert('Checkout functionality would integrate with a payment gateway here. Total: ' + document.getElementById('cart-total').textContent);
 }
 
-// Close modal on outside click
-document.getElementById('cartModal').addEventListener('click', function(e) {
-  if (e.target === this) {
-    closeCart();
-  }
-});
-
-// Smooth scrolling for navigation
-document.querySelectorAll('nav a').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
+// Form submission (basic)
+document.getElementById('checkout-form').addEventListener('submit', (e) => {
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  });
+    alert('Message sent!');
 });
-```
